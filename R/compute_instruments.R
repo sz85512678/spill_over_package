@@ -13,9 +13,9 @@
 #' randomised saturation experimental design, computed by the function
 #' compute_moments_of_s
 #' @return A data frame with containing the original data and additional columns
-#'   "cal_ZW" containing 4 by 4 matrices
-#'   "cal_Z1_for_ii" containing 2 by 2 matrices
-#'   "cal_Z1_for_iii" containing 2 by 2 matrices
+#'   "cal_ZW" containing 4 by 1 matrices
+#'   "cal_Z1_for_ii" containing 2 by 1 matrices
+#'   "cal_Z1_for_iii" containing 2 by 1 matrices
 #' @examples
 #' test_data
 #' moments_of_s
@@ -35,7 +35,7 @@ compute_instruments <- function(data_in, moments_of_s){
   data_in$Q_0 <- apply(
     data_in,
     1,
-    function(x) compute_Q_1(
+    function(x) compute_Q_0(
       moments_of_s,
       x[names(data_in) == "frac_compilers_exclude_i"][[1]],
       x[names(data_in) == "group_size"][[1]]
