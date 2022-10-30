@@ -13,6 +13,7 @@ where data$group_id are positive integers, other entries in data all (0,1)}
 \value{
 data_out, sorted by group_id,
   with additional columns: "group_size", "frac_treated_exclude_i", "frac_compilers_exclude_i"
+  The value of "frac_compilers_exclude_i" will be NaN for zero-saturation groups
 }
 \description{
 For each individual i belonging to group g,
@@ -20,5 +21,5 @@ For each individual i belonging to group g,
   compute the fraction (excluding i) of treated individual in group g,
   compute the fraction (excluding i) of compilers in group g,
 Assume data does not have NA.
-Assume that in each group there are at least 2 offered.
+Assume that in each non-zero saturation group there are at least 2 offered.
 }

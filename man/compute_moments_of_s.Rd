@@ -12,7 +12,7 @@ compute_moments_of_s(val_s, prob_s)
 \item{prob_s}{The probability of s equals to corresponding entries in val_s}
 }
 \value{
-moments_of_s  a matrix of doubles whose (i,j) entry stores E[s^(i-1)][(1-s)^(j-1)]
+moments_of_s, a matrix of doubles whose (i,j) entry stores E[s^(i-1)][(1-s)^(j-1)]
 }
 \description{
 Compute expectations of [s^(i-1)][(1-s)^(j-1)]

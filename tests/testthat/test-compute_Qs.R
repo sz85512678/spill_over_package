@@ -21,4 +21,21 @@ test_that("computations of Q0, Q1, Q work", {
   expect_equal(Q_1[1,2], 0.24)
   expect_equal(Q[2,1], 0.56)
   expect_equal(Q[2,3], 0.24)
+
+  # test zero saturation cases
+  total_offered = 2
+  Q_0_r = compute_Q_0_robust(moments_of_s, frac_comp, group_size, total_offered)
+  Q_1_r = compute_Q_1_robust(moments_of_s, frac_comp, group_size, total_offered)
+  Q_r = compute_Q_robust(Q_0, Q_1, total_offered)
+  expect_equal(Q_0_r, Q_0)
+  expect_equal(Q_1_r, Q_1)
+  expect_equal(Q_r, Q)
+
+  total_offered = 0
+  Q_0_r = compute_Q_0_robust(moments_of_s, frac_comp, group_size, total_offered)
+  Q_1_r = compute_Q_1_robust(moments_of_s, frac_comp, group_size, total_offered)
+  Q_r = compute_Q_robust(Q_0, Q_1, total_offered)
+  expect_equal(is.na(Q_0_r), TRUE)
+  expect_equal(is.na(Q_1_r), TRUE)
+  expect_equal(is.na(Q_r), TRUE)
 })

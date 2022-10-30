@@ -1,4 +1,4 @@
-# These three functions compute Qs, as a step towards computing the instruments
+#' Compute Q_0 according to the formula in Appedix C, step 3
 compute_Q_0 <- function(moments_of_s, frac_compilers_exclude_i, group_size){
   return(
     cbind(
@@ -14,7 +14,7 @@ compute_Q_0 <- function(moments_of_s, frac_compilers_exclude_i, group_size){
     )
   )
 }
-
+#' Compute Q_1 according to the formula in Appedix C, step 3
 compute_Q_1 <- function(moments_of_s, frac_compilers_exclude_i, group_size){
   return(
     cbind(
@@ -30,7 +30,35 @@ compute_Q_1 <- function(moments_of_s, frac_compilers_exclude_i, group_size){
     )
   )
 }
-
+#' Compute Q according to the formula in Appedix C, step 4
 compute_Q <- function(Q_0, Q_1){
   return( cbind(rbind(Q_0 + Q_1, Q_1), rbind(Q_1, Q_1)) )
 }
+#' Compute Q_0 for possibly zero saturation, return NA if saturation = 0.
+compute_Q_0_robust <- function(moments_of_s, frac_compilers_exclude_i,
+                               group_size, total_offered){
+  if (total_offered > 0){
+    return(compute_Q_0(moments_of_s, frac_compilers_exclude_i, group_size))
+  } else {
+    return(NA)
+  }
+}
+#' Compute Q_1 for possibly zero saturation, return NA if saturation = 0.
+compute_Q_1_robust <- function(moments_of_s, frac_compilers_exclude_i,
+                               group_size, total_offered){
+  if (total_offered > 0){
+    return(compute_Q_1(moments_of_s, frac_compilers_exclude_i, group_size))
+  } else {
+    return(NA)
+  }
+}
+#' Compute Q for possibly zero saturation, return NA if saturation = 0.
+compute_Q_robust <- function(Q_0, Q_1, total_offered){
+  if(total_offered > 0){
+    return( cbind(rbind(Q_0 + Q_1, Q_1), rbind(Q_1, Q_1)) )
+  } else {
+    return(NA)
+  }
+}
+
+

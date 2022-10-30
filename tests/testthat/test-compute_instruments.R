@@ -1,6 +1,4 @@
 test_that("computing instruments works", {
-  load("test_data.RData")
-  load("moments_of_s.RData")
   data_out = compute_instruments(test_data, moments_of_s)
   expect_equal(
     "cal_ZW" %in% names(data_out) &
