@@ -16,12 +16,7 @@
 #'   "cal_ZW" containing 4 by 1 matrices
 #'   "cal_Z1_for_ii" containing 2 by 1 matrices
 #'   "cal_Z1_for_iii" containing 2 by 1 matrices
-#' @example
-#' test_data_with_zero_sat
-#' moments_of_s
-#' compute_instruments(test_data_with_zero_sat, moments_of_s)
 #' @export
-
 compute_instruments_robust <- function(data_in, moments_of_s){
   # Assume data does not have NA.
   # Assume that in each group there are at least 2 offered
