@@ -3,6 +3,7 @@
 export(compute_instruments)
 export(compute_instruments_robust)
 export(compute_moments_of_s)
+export(transform_saturations)
 importFrom(MASS,ginv)
 importFrom(data.table,setnames)
 importFrom(dplyr,"%>%")

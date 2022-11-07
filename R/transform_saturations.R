@@ -7,6 +7,7 @@
 #' @param prob_s, probability of being assigned each original saturation levels.
 #' @return list(val_s_excl_zero, prob_s_excl_zero), transformed saturation levels
 #' and probabilities.
+#' @export
 transform_saturations <- function(val_s, prob_s){
   stopifnot("The original saturation vals are assumed to contain a zero" =
               any(val_s == 0))
