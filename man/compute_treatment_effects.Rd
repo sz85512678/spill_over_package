@@ -15,11 +15,11 @@ compute_treatment_effects(data_in, val_s, prob_s)
 \item{prob_s}{Vector of saturation assignment probabilities}
 }
 \value{
-A data frame with estimates and standard errors of various coeffcients
+A data frame with estimates and standard errors of various coefficients.
 In particular
   \eqn{\gamma^e} is the population average average negative spill-over rate
   \eqn{\gamma^n} is the non-compilers average negative spill-over rate
-  \eqn{\beta^c + \delta^c d_bar} is the average compiler direct effect,
+  \eqn{\beta^c + \delta^c d_{bar}} is the average compiler direct effect,
   where d_bar is the avergae number of treated group neighbours.
   Various other treatment effects on the treated/untreated can be deduced
   from these coefficients, see Theorem 3 of the paper and its proof in the appendix.
@@ -28,5 +28,5 @@ In particular
 Compute parameters that identify the treatment effects
 }
 \examples{
-
+compute_treatment_effects(test_data_with_zero_sat, c(0, 0.25, 1), c(0.2, 0.5, 0.3))
 }
