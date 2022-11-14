@@ -17,7 +17,7 @@ compute_moments_of_s}
 }
 \value{
 A data frame with containing the original data and additional columns
-  "cal_ZW" containing 4 by 1 matrices
+  "cal_ZW" containing 5/4 by 1 matrices, 5 if contains data-contains zero saturations
   "cal_Z1_for_ii" containing 2 by 1 matrices
   "cal_Z1_for_iii" containing 2 by 1 matrices
 }

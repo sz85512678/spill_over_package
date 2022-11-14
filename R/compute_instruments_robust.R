@@ -13,18 +13,13 @@
 #' randomised saturation experimental design, computed by the function
 #' compute_moments_of_s
 #' @return A data frame with containing the original data and additional columns
-#'   "cal_ZW" containing 4 by 1 matrices
+#'   "cal_ZW" containing 5/4 by 1 matrices, 5 if contains data-contains zero saturations
 #'   "cal_Z1_for_ii" containing 2 by 1 matrices
 #'   "cal_Z1_for_iii" containing 2 by 1 matrices
 #' @export
 compute_instruments_robust <- function(data_in, moments_of_s){
-  # Assume data does not have NA.
-  # Assume that in each group there are at least 2 offered
-
   stopifnot("data should not have NA" = any(is.na(data_in)) == 0)
-
   data_in = compute_auxilliary_data(data_in)
-
   data_in$Q_0 <- apply(
     data_in,
     1,
