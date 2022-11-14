@@ -5,7 +5,6 @@
 #' @param val_s The set of values of s
 #' @param prob_s The probability of s equals to corresponding entries in val_s
 #' @return moments_of_s, a matrix of doubles whose (i,j) entry stores E[s^(i-1)][(1-s)^(j-1)]
-#' @export
 compute_moments_of_s <- function(val_s, prob_s)
 {
   stopifnot(length(val_s) == length(prob_s))

@@ -20,7 +20,6 @@
 #' test_data
 #' moments_of_s
 #' compute_instruments(test_data, moments_of_s)
-#' @export
 
 compute_instruments <- function(data_in, moments_of_s){
   # Assume data does not have NA.
